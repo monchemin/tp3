@@ -15,6 +15,8 @@ public class AiPlayer extends Player {
 	@Override
 	public boolean makeMove(Move mv) {
 		// TODO Auto-generated method stub
+		
+		//Verifie la présence d'une piece dans 
 		if (mv == null)
 			return false;
 		if (!playGround.getGrid()[mv.xI][mv.yI].isOccupied())
