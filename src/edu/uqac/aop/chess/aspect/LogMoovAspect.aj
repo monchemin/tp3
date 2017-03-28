@@ -8,12 +8,13 @@ import java.util.Calendar;
 
 import edu.uqac.aop.chess.agent.*;
 
+
 public aspect LogMoovAspect {
 	PrintWriter logCoup;
 	pointcut hlire() : execution(char HumanPlayer.Lire(..)); //lecture de chaque caractère saisi
 	pointcut vider() : execution(* HumanPlayer.ViderBuffer(..)); //vider le coup
 	pointcut makeMoovHP(Move mv) : execution(* HumanPlayer.makeMove(Move)) && args(mv);
-	pointcut makeMoovAP(Move mv) : execution(* AiPlayer.makeMove(Move)) && args(mv);
+	pointcut makeMoovAP() : execution(Move AiPlayer.makeMove());
 	
 	String coup ="";
 	
@@ -49,8 +50,8 @@ public aspect LogMoovAspect {
 		
 		
 	}
-	
-	before(Move mv): makeMoovAP(mv)
+	//after() returning(char c) : hlire()
+	after() returning(Move mv) : makeMoovAP()
 	{
 		try { //logger du coup machine 
 			logCoup = new PrintWriter(new FileWriter("logCoup.txt", true));

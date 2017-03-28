@@ -1,0 +1,6 @@
+Mon Mar 27 01:03:07 EDT 2017 |  coup(joue) H : a2a4
+Mon Mar 27 01:03:07 EDT 2017 |  coup(inscrit) H : a1a3
+Mon Mar 27 01:03:07 EDT 2017 |  coup M : g7f5
+Mon Mar 27 01:10:16 EDT 2017 |  coup(joue) H : a2a3
+Mon Mar 27 01:10:16 EDT 2017 |  coup(inscrit) H : a1a2
+Mon Mar 27 01:10:16 EDT 2017 |  coup M : g7f5
