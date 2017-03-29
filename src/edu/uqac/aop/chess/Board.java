@@ -52,13 +52,17 @@ public class Board {
 		grid[4][7].setPiece(new King(Player.BLACK));
 	}
 
-	public void movePiece(Move mv) {
+	public void movePiece(Move mv, Spot[][] grid) {
 		grid[mv.xF][mv.yF].setPiece(grid[mv.xI][mv.yI].getPiece());
 		grid[mv.xI][mv.yI].release();
 	}
 
 	public Spot[][] getGrid() {
 		return grid;
+	}
+	
+	public void setGrid(Spot[][] grid) {
+		this.grid = grid;
 	}
 
 	public String toString() {

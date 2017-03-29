@@ -20,7 +20,7 @@ public class HumanPlayer extends Player {
 			return false;
 		if(!playGround.getGrid()[mv.xI][mv.yI].getPiece().isMoveLegal(mv))
 			return false;		
-		playGround.movePiece(mv);
+		playGround.movePiece(mv, this.playGround.getGrid());
 			return true;
 	}
 
