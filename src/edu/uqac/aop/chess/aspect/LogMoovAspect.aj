@@ -29,7 +29,7 @@ public aspect LogMoovAspect {
 	{
 		try { // logger du coup réel 
 			logCoup = new PrintWriter(new FileWriter("logCoup.txt", true));
-			logCoup.println(Calendar.getInstance().getTime() + " | " + " coup(joue) H : " + coup );
+			logCoup.println(Calendar.getInstance().getTime() + " | " + " HuPlayer : " + coup );
 			coup = "";
 			
 		} catch (IOException e) {
@@ -38,7 +38,7 @@ public aspect LogMoovAspect {
 		}
 		finally {logCoup.close();}
 	}
-	
+	/*
 	before(Move mv) : makeMoovHP(mv)
 	{
 		try { // logger du coup inscrit
@@ -53,7 +53,7 @@ public aspect LogMoovAspect {
 		finally {logCoup.close();};
 		
 	}
-	
+	*/
 
 	
 	//after() returning(char c) : hlire()
@@ -61,7 +61,7 @@ public aspect LogMoovAspect {
 	{
 		try { //logger du coup machine 
 			logCoup = new PrintWriter(new FileWriter("logCoup.txt", true));
-			logCoup.println( Calendar.getInstance().getTime() + " | " + " coup M : " + mv );
+			logCoup.println( Calendar.getInstance().getTime() + " | " + " AiPlayer : " + mv );
 			
 
 		} catch (IOException e) {
